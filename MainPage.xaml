@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:_4955511BrochaGorda.Models"
+
+             x:Class="_4955511BrochaGorda.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModel:PresupuestoViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Label Text="Ingrese la cantidad de metros:"/>
+            <Entry Text="{Binding Metros}" 
+          
+            Keyboard="Numeric" />
+
+            <Label Text="Ingrese el precio por metro"/>
+            <Entry Text="{Binding Precioxmetro}" 
+           
+            Keyboard="Numeric" />
+
+            <Label Text="Presupuesto:" FontSize="16" HorizontalOptions="Center" />
+            <Label Text="{Binding Total}" 
+            FontSize="24" 
+            HorizontalOptions="Center" />
+
+            <Button
+             x:Name="CounterBtn"
+             Text="Calcular Presupuesto"
+             Command="{Binding PresupuestoCommand}"
+             HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>
